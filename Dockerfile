@@ -20,4 +20,5 @@ COPY --from=builder /usr/local/bin/gunicorn /usr/local/bin/gunicorn
 COPY . /app/
 
 EXPOSE 8000
-CMD ["sh", "-c", "gunicorn AstronautWebAPI.wsgi:application --bind 0.0.0.0:${PORT:-8000}"]
+CMD ["sh", "-c", "PORT=${PORT:-8000} && gunicorn AstronautWebAPI.wsgi:application --bind 0.0.0.0:$PORT"]
+#CMD ["sh", "-c", "gunicorn AstronautWebAPI.wsgi:application --bind 0.0.0.0:${PORT:-8000}"]
