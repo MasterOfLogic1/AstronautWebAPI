@@ -20,4 +20,4 @@ COPY --from=builder /usr/local/bin/gunicorn /usr/local/bin/gunicorn
 COPY . /app/
 
 EXPOSE $PORT
-CMD ["gunicorn", "AstronautWebAPI.wsgi:application", "--bind", "0.0.0.0:$PORT"]
+CMD ["gunicorn", "AstronautWebAPI.wsgi:application", "--bind", "0.0.0.0:${PORT:-8000}"]
