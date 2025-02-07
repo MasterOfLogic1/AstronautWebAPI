@@ -11,7 +11,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # Set working directory inside the container
-WORKDIR /app
+WORKDIR /AstronautWebAPI/app
 
 # Copy requirements.txt into the container’s working directory
 COPY requirements.txt ./
