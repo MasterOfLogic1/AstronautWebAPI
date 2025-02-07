@@ -21,5 +21,3 @@ COPY . /app/
 
 EXPOSE 8000
 CMD ["gunicorn", "AstronautWebAPI.wsgi:application", "--bind", "0.0.0.0:8000"]
-#CMD ["sh", "-c", "PORT=${PORT:-8000} && gunicorn AstronautWebAPI.wsgi:application --bind 0.0.0.0:$PORT"]
-#CMD ["sh", "-c", "gunicorn AstronautWebAPI.wsgi:application --bind 0.0.0.0:${PORT:-8000}"]
