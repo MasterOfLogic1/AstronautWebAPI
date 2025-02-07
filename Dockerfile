@@ -19,5 +19,9 @@ COPY --from=builder /usr/local/bin/gunicorn /usr/local/bin/gunicorn
 
 COPY . /app/
 
-EXPOSE 8000
-CMD ["gunicorn", "AstronautWebAPI.wsgi:application", "--bind", "0.0.0.0:8000"]
+# Set environment variables
+ENV PORT=8000
+EXPOSE $PORT
+
+# Use shell form to resolve $PORT dynamically
+CMD gunicorn AstronautWebAPI.wsgi:application --bind 0.0.0.0:$PORT --workers=3 --timeout 120
