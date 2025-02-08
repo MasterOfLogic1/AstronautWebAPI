@@ -52,7 +52,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'AstronautWebAPI.urls'
 
 # Allow all requests
-CORS_ALLOWED_ORIGINS = [*]
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Allow all headers
 CORS_ALLOW_HEADERS = [
